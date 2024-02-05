@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jan Kowalski 3B</title>
+    <style>
+        body {
+            background-color: #f0f0f0b9;
+            font-family: Georgia, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+            background-color: #008cffe8;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            border-top: 2px solid rgba(0, 0, 0, 0.219);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.219);
+        }
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        label, input {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jan Kowalski 3B</h1>
+    <div class="input-container">
+        <div>
+            <label for="name">Jak masz na imię?</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="age">Ile masz lat?</label>
+            <input type="number" id="age">
+        </div>
+    </div>
+    <button onclick="greet()">Sprawdź</button>
+    <p id="greeting"></p>
+
+    <script>
+        function greet() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var greeting;
+
+            if (age > 18) {
+                greeting = "Dzień dobry " + name + "!";
+            } else {
+                greeting = "Cześć " + name+ "!";
+            }
+
+            document.getElementById('greeting').innerText = greeting;
+        }
+    </script>
+</body>
+</html>
